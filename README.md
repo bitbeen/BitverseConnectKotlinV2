@@ -1,6 +1,6 @@
 # bitverseConnectKotlin
 
-[![](https://jitpack.io/v/bitverseWallet/bitverseConnectKotlin.svg)](https://jitpack.io/#bitverseWallet/bitverseConnectKotlin)
+[![](https://jitpack.io/v/bitverseWallet/bitverseConnectKotlin.svg)](https://jitpack.io/#bitbeen/BitverseConnectKotlin)
 
 library to use bitverseConnect with Kotlin or Java
 
@@ -15,11 +15,11 @@ repositories {
 ```
 添加sdk依赖
 
-从<https://jitpack.io/#bitverseWallet/bitverseConnectKotlin>查找最新版本号
+从<https://jitpack.io/#bitbeen/BitverseConnectKotlin>查找最新版本号
 
 ```gradle
 dependencies {
- implementation 'com.github.bitverseWallet:bitverseConnectKotlin:40900783c1'
+ implementation 'com.github.bitbeen:BitverseConnectKotlin:1.0.0'
 }
 ```
 
