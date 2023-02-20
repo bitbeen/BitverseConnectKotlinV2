@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/com.android.tools/proguard/coroutines.pro'
+    }
+}
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+}
+
+dependencies {
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation "com.github.komputing:khex:1.1.0"
+
+    implementation "org.bouncycastle:bcprov-jdk15to18:1.68"
+
+    implementation 'com.squareup.moshi:moshi:1.8.0'
+    // TODO: it would be better to use the generated adapter by moshi
+    // but for that we should move the implementations in different modules
+    //kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+
+    testImplementation 'org.assertj:assertj-core:3.19.0'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${versions.jupiter}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${versions.jupiter}"
+//    testRuntime "org.junit.jupiter:junit-jupiter-engine:${versions.jupiter}"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:$versions.okhttp"
+    testImplementation project(path: ':lib')
+}
+
+//test {
+//    useJUnitPlatform()
+//}
