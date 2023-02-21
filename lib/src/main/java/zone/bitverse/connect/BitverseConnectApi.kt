@@ -9,6 +9,7 @@ import okhttp3.OkHttpClient
 import zone.bitverse.connect.impls.BCClient
 import zone.bitverse.connect.impls.MoshiPayloadAdapter
 import zone.bitverse.connect.impls.OkHttpTransport
+import java.net.URLEncoder
 
 class BitverseConnectApi(private val delegate: BitverseConnectDelegate?) {
     private var client: Client? = null
@@ -72,7 +73,7 @@ class BitverseConnectApi(private val delegate: BitverseConnectDelegate?) {
                 delegate?.didConnect(chainId.toInt(), accounts)
             }
         }
-        url = "$wsURL&callbackUrl=$callbackUrl"
+        url = "$wsURL"+ URLEncoder.encode(URLEncoder.encode("&callbackUrl=${URLEncoder.encode(callbackUrl)}"));
         val intent = Intent(Intent.ACTION_VIEW).apply {
             data = Uri.parse(url)
         }
