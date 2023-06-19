@@ -19,7 +19,7 @@ repositories {
 
 ```gradle
 dependencies {
- implementation 'com.github.bitbeen:BitverseConnectKotlin:1.0.0'
+ implementation 'com.github.bitbeen:BitverseConnectKotlin:1.1.0'
 }
 ```
 
