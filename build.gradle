@@ -39,7 +39,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.21"
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.38.0'
         
         // FIXME: for sample app
