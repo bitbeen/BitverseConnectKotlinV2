@@ -56,6 +56,7 @@ allprojects {
          */
         google() //但是此处不会，需要自主添加
         jcenter()
+        maven { url 'https://www.jitpack.io' }
     }
 }
 apply plugin: "com.github.ben-manes.versions"
