@@ -47,4 +47,16 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        /*
+         解决报错：Could not find com.android.tools.build:aapt2:3.3.0-5013011.
+         Beginning with Android Studio 3.2 Canary 11, the source for AAPT2 (Android Asset Packaging Tool 2) is Google's Maven repository.
+         To use AAPT2, make sure that you have a google() dependency in your build.gradle file, as shown here:
+         */
+        google() //但是此处不会，需要自主添加
+        jcenter()
+    }
+}
 apply plugin: "com.github.ben-manes.versions"
+
