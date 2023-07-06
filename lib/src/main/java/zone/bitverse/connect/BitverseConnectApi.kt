@@ -34,7 +34,7 @@ object BitverseConnectApi {
                 delegate: BitverseConnectDelegate?) {
     appContext = application
     this.delegate = delegate;
-    val serverUri = "wss://relay.walletconnect.com?projectId=1c8433f67cf7bfd3e7f9e169118802ce"
+    val serverUri = "wss://relay.walletconnect.com?projectId=cf8dec22ff95d4cec5f213305b5ff01f"
     CoreClient.initialize(
       relayServerUrl = serverUri, connectionType = ConnectionType.AUTOMATIC, application = application, metaData = Core.Model.AppMetaData(
         name = dappName,
